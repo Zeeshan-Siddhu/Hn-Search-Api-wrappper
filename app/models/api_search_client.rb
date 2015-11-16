@@ -1,6 +1,7 @@
 require 'httparty'
 class ApiSearchClient
 
+  #total count used for pagination
   def self.total_count_of_filtered_items
     begin 
       response = HTTParty.get('http://hn.algolia.com/api/v1/search_by_date?tags=story&query=github&restrictSearchableAttributes=url&numericFilters=points>1000')
@@ -11,6 +12,7 @@ class ApiSearchClient
   end
 
 
+  #api call with conditional filters
   def self.request_items page
     begin
       response = HTTParty.get("http://hn.algolia.com/api/v1/search_by_date?tags=story&query=github&restrictSearchableAttributes=url&numericFilters=points>1000&hitsPerPage=5&page=#{page}")

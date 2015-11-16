@@ -1,28 +1,15 @@
 == README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby version: 2.0.0
+Rails version: 4.2.0
+db: postgreSql
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+App is deployed on heroku on following Url
+https://stark-beach-1376.herokuapp.com/
+To run on local machine follow these steps.
+Steps:
+  1)Install Ruby,  Bundler, PostgreSql, Node.js
+  2)cd to my project directory.
+  3)bundle
+  4)rake db:create
+  6)rails s
