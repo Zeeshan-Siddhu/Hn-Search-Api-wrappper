@@ -1,0 +1,7 @@
+<tr>
+  <td><%= item['created_at'].to_date.strftime("%d/%m/%Y") %></td>
+  <td><%= item['title'] %></td>
+  <td><%= item['author'] %></td>
+  <td><%= item['points'] %></td>
+  <td><%= link_to item['url'], item['url'], :target => "_blank" %></td>
+</tr>

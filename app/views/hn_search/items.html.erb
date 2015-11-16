@@ -1,0 +1,33 @@
+<div class='container'>
+  <div class="jumbotron">
+    <h4>Items</h4>
+    <div class='clearfix'></div>
+    <table class="table white-background">
+      <thead>
+        <tr>
+          <th>Created At</th>
+          <th>Title</th>
+          <th>Author Name</th>
+          <th>Author Points</th>
+          <th>Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <%= render partial: 'render_item', locals: { item: item } %>
+        <% end %>  
+      </tbody>
+    </table>
+    <div class="text-center">
+      <ul class="pagination">
+
+        <li class="<%= 'disabled' if params[:page].to_i == 0 %>"><%= link_to '&laquo;'.html_safe, hn_search_items_path(page: params[:page].to_i - 1, total_items: @items_total_count) %></li>
+        <% @total_pages.times do |page_num| %>
+          <li class="<%= 'active' if page_num == params[:page].to_i %>"><%= link_to page_num, hn_search_items_path(page: page_num, total_items: @items_total_count) %>
+          </li>
+        <% end %>
+        <li class="<%= 'disabled' if (params[:page].to_i + 1) == @total_pages %>"><%= link_to '&raquo;'.html_safe, hn_search_items_path(page: params[:page].to_i + 1, total_items: @items_total_count) %></li>
+      </ul>
+    </div>  
+  </div>
+</div>
